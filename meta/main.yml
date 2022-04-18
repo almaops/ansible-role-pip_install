@@ -3,9 +3,10 @@ galaxy_info:
   author: Dmitrii Kashin
   description: install pip packages
   role_name: pip_install
+  namespace: almaops
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: 2.10
 
   platforms:
     - name: Ubuntu
@@ -30,9 +31,10 @@ galaxy_info:
 
 allow_duplicates: true
 dependencies:
-  - role: freehck.pkg_install
+  - role: almaops.pkg_install
     vars:
       pkg_install_packages:
         - python3-pip
     when:
       - ansible_distribution | default('none') in [ 'Ubuntu', 'Debian' ]
+...
