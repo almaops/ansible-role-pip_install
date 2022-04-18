@@ -3,6 +3,7 @@
   hosts: all
   become: true
   roles:
-    - role: freehck.pip_install
+    - role: almaops.pip_install
       pip_install_packages:
         - docker
+...
